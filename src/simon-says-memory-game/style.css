@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 24px;
+  padding: 24px 24px 32px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 0.04em;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+.status-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.status-item {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 10px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(75, 85, 99, 0.8);
+  min-width: 96px;
+  text-align: center;
+}
+
+.status-item .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+}
+
+.status-item .value {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.primary-btn {
+  background: #22c55e;
+  color: #020617;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.5);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(34, 197, 94, 0.6);
+  background: #16a34a;
+}
+
+.primary-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.4);
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  grid-template-rows: repeat(2, 140px);
+  gap: 14px;
+  padding: 16px;
+  border-radius: 24px;
+  background: radial-gradient(circle at top, #0f172a 0, #020617 100%);
+  box-shadow: inset 0 0 30px rgba(15, 23, 42, 0.9);
+}
+
+.pad {
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.08s ease, opacity 0.08s ease;
+}
+
+.pad-green {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.pad-red {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.pad-yellow {
+  background: linear-gradient(135deg, #eab308, #facc15);
+}
+
+.pad-blue {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.pad.active {
+  transform: translateY(2px) scale(1.03);
+  box-shadow: 0 0 28px rgba(248, 250, 252, 0.8);
+  filter: brightness(1.35);
+}
+
+.status-message {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  text-align: center;
+  min-height: 20px;
+}
+
+.leaderboard-section {
+  margin-top: 8px;
+}
+
+.leaderboard-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+#leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+#leaderboard thead {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+#leaderboard th,
+#leaderboard td {
+  padding: 8px 10px;
+  text-align: left;
+}
+
+#leaderboard th {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  border-bottom: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+#leaderboard tbody tr:nth-child(even) {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+#leaderboard tbody tr:nth-child(odd) {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+#leaderboard tbody tr:hover {
+  background: rgba(55, 65, 81, 0.7);
+}
+
+@media (max-width: 640px) {
+  .game-board {
+    grid-template-columns: repeat(2, 110px);
+    grid-template-rows: repeat(2, 110px);
+  }
+
+  .pad {
+    border-radius: 20px;
+  }
+}
