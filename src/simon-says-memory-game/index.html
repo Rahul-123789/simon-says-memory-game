@@ -6,27 +6,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="dark">
   <main class="container">
     <header class="header">
-      <h1>Simon Says · Memory Game</h1>
-      <p class="subtitle">Repita a sequência de cores, suba de nível e tente entrar no ranking.</p>
+      <h1 id="title">Simon Says · Memory Game</h1>
+      <p id="subtitle" class="subtitle">
+        Repita a sequência de cores, suba de nível e tente entrar no ranking.
+      </p>
     </header>
 
     <section class="status-panel">
       <div class="status-item">
-        <span class="label">Nível</span>
+        <span class="label" id="label-level">Nível</span>
         <span class="value" id="level">0</span>
       </div>
       <div class="status-item">
-        <span class="label">Melhor</span>
+        <span class="label" id="label-best">Melhor</span>
         <span class="value" id="best-score">0</span>
       </div>
+
+      <div class="status-item status-select">
+        <span class="label" id="label-difficulty">Dificuldade</span>
+        <select id="difficulty-select">
+          <option value="normal">Normal</option>
+          <option value="fast">Rápido</option>
+          <option value="expert">Expert</option>
+        </select>
+      </div>
+
+      <div class="status-item theme-buttons">
+        <span class="label" id="label-theme">Tema</span>
+        <div class="theme-buttons-row">
+          <button id="theme-classic" class="chip-btn active" data-theme="classic">Clássico</button>
+          <button id="theme-playstation" class="chip-btn" data-theme="playstation">PlayStation Mode</button>
+          <button id="theme-emoji" class="chip-btn" data-theme="emoji">Emoji Mode</button>
+        </div>
+      </div>
+
+      <div class="toggles-column">
+        <button id="sound-toggle" class="secondary-btn">🔊 Som</button>
+        <button id="training-toggle" class="secondary-btn">🎓 Treino: OFF</button>
+        <button id="theme-toggle" class="secondary-btn">🌙 Dark</button>
+        <div class="lang-row">
+          <button id="lang-pt" class="secondary-btn small active">PT-BR</button>
+          <button id="lang-en" class="secondary-btn small">EN</button>
+        </div>
+      </div>
+
       <button id="start-btn" class="primary-btn">Start</button>
     </section>
 
     <section class="game-wrapper">
-      <div class="game-board">
+      <div class="game-board theme-classic" id="game-board">
         <button class="pad pad-green" data-color="green"></button>
         <button class="pad pad-red" data-color="red"></button>
         <button class="pad pad-yellow" data-color="yellow"></button>
@@ -36,20 +67,56 @@
     </section>
 
     <section class="leaderboard-section">
-      <h2>🏆 Leaderboard</h2>
+      <h2 id="leaderboard-title">🏆 Leaderboard</h2>
       <table id="leaderboard">
         <thead>
           <tr>
             <th>#</th>
-            <th>Nome</th>
-            <th>Score</th>
-            <th>Data</th>
+            <th id="th-name">Nome</th>
+            <th id="th-score">Score</th>
+            <th id="th-date">Data</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
     </section>
   </main>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-backdrop"></div>
+    <div class="overlay-content">
+      <h2 id="overlay-title">Fim de jogo</h2>
+      <p id="overlay-subtitle" class="overlay-subtitle">
+        Confira o resumo da partida antes de salvar.
+      </p>
+      <div class="overlay-stats">
+        <div>
+          <span id="summary-label-level">Nível alcançado</span>:
+          <span id="summary-level">0</span>
+        </div>
+        <div>
+          <span id="summary-label-score">Score</span>:
+          <span id="summary-score">0</span>
+        </div>
+        <div>
+          <span id="summary-label-difficulty">Dificuldade</span>:
+          <span id="summary-difficulty">Normal</span>
+        </div>
+        <div>
+          <span id="summary-label-theme">Tema</span>:
+          <span id="summary-theme">Clássico</span>
+        </div>
+      </div>
+      <p id="overlay-training-note" class="overlay-note hidden">
+        Modo treino ativo: esta partida não será salva no leaderboard.
+      </p>
+      <div class="overlay-actions">
+        <button id="overlay-save" class="primary-btn">Salvar no Leaderboard</button>
+        <button id="overlay-restart" class="secondary-btn">Jogar novamente</button>
+        <button id="overlay-close" class="secondary-btn ghost">Fechar</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
 </body>
