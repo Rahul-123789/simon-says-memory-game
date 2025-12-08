@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Simon Says · Memory Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Simon Says · Memory Game</h1>
+      <p class="subtitle">Repita a sequência de cores, suba de nível e tente entrar no ranking.</p>
+    </header>
+
+    <section class="status-panel">
+      <div class="status-item">
+        <span class="label">Nível</span>
+        <span class="value" id="level">0</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Melhor</span>
+        <span class="value" id="best-score">0</span>
+      </div>
+      <button id="start-btn" class="primary-btn">Start</button>
+    </section>
+
+    <section class="game-wrapper">
+      <div class="game-board">
+        <button class="pad pad-green" data-color="green"></button>
+        <button class="pad pad-red" data-color="red"></button>
+        <button class="pad pad-yellow" data-color="yellow"></button>
+        <button class="pad pad-blue" data-color="blue"></button>
+      </div>
+      <p id="status" class="status-message">Clique em Start para começar.</p>
+    </section>
+
+    <section class="leaderboard-section">
+      <h2>🏆 Leaderboard</h2>
+      <table id="leaderboard">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Score</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
