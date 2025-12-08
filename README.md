@@ -69,6 +69,52 @@
 
 ## 📂 Estrutura de Pastas · Folder Structure
 
+simon-says-memory-game/
+├─ src/
+│  └─ simon-says-memory-game/
+│     ├─ index.html
+│     ├─ style.css
+│     ├─ script.js
+│     ├─ assets/
+│     │  ├─ square.PNG
+│     │  ├─ cross.PNG
+│     │  ├─ triangle.PNG
+│     │  ├─ circle.PNG
+│     │  ├─ angry.PNG
+│     │  ├─ clown.PNG
+│     │  ├─ love.PNG
+│     │  └─ shy.PNG
+│     └─ audio/
+│        ├─ green.mp3
+│        ├─ red.mp3
+│        ├─ yellow.mp3
+│        ├─ blue.mp3
+│        └─ error.mp3
+├─ tests/
+├─ README.md
+├─ LICENSE (MIT)
+└─ .gitignore
+
+🚀 Como Rodar Localmente · How to Run Locally
+
 | 🇧🇷 PT-BR                                                                                                                                                                                                                                                                                                                                                                                                                               | 🇺🇸 EN                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1. Clone o repositório:<br>`bash<br>git clone https://github.com/Joaolbero/simon-says-memory-game.git<br>`<br><br>2. Entre na pasta do projeto:<br>`bash<br>cd simon-says-memory-game/src/simon-says-memory-game<br>`<br><br>3. Abra o arquivo `index.html` diretamente no navegador **ou** utilize a extensão **Live Server** no VS Code.<br><br>4. Verifique se as pastas `assets/` e `audio/` possuem os arquivos PNG e MP3 corretos. | 1. Clone the repository:<br>`bash<br>git clone https://github.com/Joaolbero/simon-says-memory-game.git<br>`<br><br>2. Enter the project folder:<br>`bash<br>cd simon-says-memory-game/src/simon-says-memory-game<br>`<br><br>3. Open the `index.html` file directly in your browser **or** use the **Live Server** extension in VS Code.<br><br>4. Ensure the `assets/` and `audio/` folders contain the correct PNG and MP3 files. |
+
+📈 Ideias Futuras · Future Ideas
+
+| 🇧🇷 PT-BR                                                                                                                                                                                                                                                         | 🇺🇸 EN                                                                                                                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| • Atalhos no teclado para os pads (Q, W, A, S).<br>• Ranking global usando backend/API.<br>• Sistema de conquistas (ex.: “Chegou ao nível 20 no Expert”).<br>• Tela avançada de configurações (volume, velocidade de animação etc.).<br>• Modo mobile full-screen. | • Keyboard shortcuts for pads (Q, W, A, S).<br>• Global ranking using backend/API.<br>• Achievement system (e.g., “Reached level 20 on Expert”).<br>• Advanced settings screen (volume, animation timings, etc.).<br>• Full-screen mobile mode. |
+
+⚖️ Licença · License
+
+| 🇧🇷 PT-BR                                                                                                                    | 🇺🇸 EN                                                                                                                  |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Este projeto está licenciado sob a **Licença MIT**. Para mais detalhes, consulte o arquivo `LICENSE` incluído no repositório. | This project is licensed under the **MIT License**. For more details, see the `LICENSE` file included in the repository. |
+
+👤 Autor · Author
+
+| 🇧🇷 PT-BR                        | 🇺🇸 EN                           |
+| --------------------------------- | --------------------------------- |
+| Criado por **João Albero** · 2025 | Created by **João Albero** · 2025 |
