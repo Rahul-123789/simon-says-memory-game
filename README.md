@@ -70,29 +70,53 @@
 ## 📂 Estrutura de Pastas · Folder Structure
 
 simon-says-memory-game/
+
 ├─ src/
+
 │  └─ simon-says-memory-game/
+
 │     ├─ index.html
+
 │     ├─ style.css
+
 │     ├─ script.js
+
 │     ├─ assets/
+
 │     │  ├─ square.PNG
+
 │     │  ├─ cross.PNG
+
 │     │  ├─ triangle.PNG
+
 │     │  ├─ circle.PNG
+
 │     │  ├─ angry.PNG
+
 │     │  ├─ clown.PNG
+
 │     │  ├─ love.PNG
+
 │     │  └─ shy.PNG
+
 │     └─ audio/
+
 │        ├─ green.mp3
+
 │        ├─ red.mp3
+
 │        ├─ yellow.mp3
+
 │        ├─ blue.mp3
+
 │        └─ error.mp3
+
 ├─ tests/
+
 ├─ README.md
+
 ├─ LICENSE (MIT)
+
 └─ .gitignore
 
 🚀 Como Rodar Localmente · How to Run Locally
