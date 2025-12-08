@@ -34,7 +34,8 @@ const audioFiles = {
   green: "audio/green.mp3",
   red: "audio/red.mp3",
   yellow: "audio/yellow.mp3",
-  blue: "audio/blue.mp3"
+  blue: "audio/blue.mp3",
+  error: "audio/error.mp3"
 };
 
 const difficulties = {
@@ -65,6 +66,7 @@ const translations = {
     leaderboardTitle: "🏆 Leaderboard",
     thName: "Nome",
     thScore: "Score",
+    thDifficulty: "Dificuldade",
     thDate: "Data",
     overlayTitle: "Fim de jogo",
     overlaySubtitle: "Confira o resumo da partida antes de salvar.",
@@ -105,6 +107,7 @@ const translations = {
     leaderboardTitle: "🏆 Leaderboard",
     thName: "Name",
     thScore: "Score",
+    thDifficulty: "Difficulty",
     thDate: "Date",
     overlayTitle: "Game Over",
     overlaySubtitle: "Check the game summary before saving.",
@@ -136,6 +139,7 @@ const langElements = {
   leaderboardTitle: document.getElementById("leaderboard-title"),
   thName: document.getElementById("th-name"),
   thScore: document.getElementById("th-score"),
+  thDifficulty: document.getElementById("th-difficulty"),
   thDate: document.getElementById("th-date"),
   overlayTitle,
   overlaySubtitle,
@@ -160,20 +164,27 @@ const state = {
 
 const audioCache = {};
 
-function loadAudio(color) {
-  if (audioCache[color]) {
-    return audioCache[color];
+function loadAudio(key) {
+  if (audioCache[key]) {
+    return audioCache[key];
   }
-  const audio = new Audio(audioFiles[color]);
-  audioCache[color] = audio;
+  const src = audioFiles[key];
+  if (!src) {
+    return null;
+  }
+  const audio = new Audio(src);
+  audioCache[key] = audio;
   return audio;
 }
 
-function playSound(color) {
+function playSound(key) {
   if (!state.soundEnabled) {
     return;
   }
-  const audio = loadAudio(color);
+  const audio = loadAudio(key);
+  if (!audio) {
+    return;
+  }
   audio.currentTime = 0;
   audio.play();
 }
@@ -251,13 +262,24 @@ function saveLeaderboard(list) {
   localStorage.setItem("simonLeaderboard", JSON.stringify(list));
 }
 
+function translateDifficultyCode(code) {
+  const t = translations[state.language];
+  if (code === "fast") {
+    return t.diffFast;
+  }
+  if (code === "expert") {
+    return t.diffExpert;
+  }
+  return t.diffNormal;
+}
+
 function renderLeaderboard() {
   const list = getLeaderboard();
-  const t = translations[state.language];
   leaderboardBody.innerHTML = "";
   list.forEach((entry, index) => {
+    const diffLabel = translateDifficultyCode(entry.difficulty || "normal");
     const tr = document.createElement("tr");
-    tr.innerHTML = `<td>${index + 1}</td><td>${entry.name}</td><td>${entry.score}</td><td>${entry.date}</td>`;
+    tr.innerHTML = `<td>${index + 1}</td><td>${entry.name}</td><td>${entry.score}</td><td>${diffLabel}</td><td>${entry.date}</td>`;
     leaderboardBody.appendChild(tr);
   });
 }
@@ -276,6 +298,7 @@ function addScoreToLeaderboard(finalLevel, finalScore) {
   const entry = {
     name,
     score: finalScore,
+    difficulty: difficultySelect.value || "normal",
     date: new Date().toISOString().split("T")[0]
   };
   const list = getLeaderboard();
@@ -324,34 +347,43 @@ function nextRound() {
 }
 
 function handleError() {
+  playSound("error");
   setStatus("statusError");
   state.acceptingInput = false;
   shakeBoard();
+
   if (state.trainingMode) {
     setTimeout(() => {
       setStatus("statusWatch");
       playSequence();
-    }, 600);
+    }, 700);
     return;
   }
+
+  const t = translations[state.language];
+
   summaryLevelEl.textContent = String(state.level - 1);
   summaryScoreEl.textContent = String(state.score);
-  const t = translations[state.language];
-  summaryDifficultyEl.textContent = difficultySelect.value === "normal" ? t.diffNormal :
-    difficultySelect.value === "fast" ? t.diffFast : t.diffExpert;
-  summaryThemeEl.textContent =
-    state.theme === "classic" ? t.themeClassic :
-    state.theme === "playstation" ? t.themePlay : t.themeEmoji;
+
+  const diffValue = difficultySelect.value || "normal";
+  const diffLabel = translateDifficultyCode(diffValue);
+  summaryDifficultyEl.textContent = diffLabel;
+
+  if (state.theme === "classic") {
+    summaryThemeEl.textContent = t.themeClassic;
+  } else if (state.theme === "playstation") {
+    summaryThemeEl.textContent = t.themePlay;
+  } else {
+    summaryThemeEl.textContent = t.themeEmoji;
+  }
+
   overlayTitle.textContent = t.overlayTitle;
   overlaySubtitle.textContent = t.overlaySubtitle;
   overlayTrainingNote.textContent = t.overlayNoteTraining;
-  if (state.trainingMode) {
-    overlayTrainingNote.classList.remove("hidden");
-    overlaySaveBtn.style.display = "none";
-  } else {
-    overlayTrainingNote.classList.add("hidden");
-    overlaySaveBtn.style.display = "inline-flex";
-  }
+
+  overlayTrainingNote.classList.add("hidden");
+  overlaySaveBtn.style.display = "inline-flex";
+
   overlay.classList.remove("hidden");
 }
 
@@ -464,6 +496,7 @@ function applyLanguageTexts() {
   langElements.leaderboardTitle.textContent = t.leaderboardTitle;
   langElements.thName.textContent = t.thName;
   langElements.thScore.textContent = t.thScore;
+  langElements.thDifficulty.textContent = t.thDifficulty;
   langElements.thDate.textContent = t.thDate;
   langElements.overlayTitle.textContent = t.overlayTitle;
   langElements.overlaySubtitle.textContent = t.overlaySubtitle;
@@ -471,15 +504,19 @@ function applyLanguageTexts() {
   langElements.summaryLabelScore.textContent = t.summaryScore;
   langElements.summaryLabelDifficulty.textContent = t.summaryDifficulty;
   langElements.summaryLabelTheme.textContent = t.summaryTheme;
+
   difficultySelect.options[0].textContent = t.diffNormal;
   difficultySelect.options[1].textContent = t.diffFast;
   difficultySelect.options[2].textContent = t.diffExpert;
+
   themeClassicBtn.textContent = t.themeClassic;
   themePlayBtn.textContent = t.themePlay;
   themeEmojiBtn.textContent = t.themeEmoji;
+
   soundToggleBtn.textContent = state.soundEnabled ? t.btnSoundOn : t.btnSoundOff;
   trainingToggleBtn.textContent = state.trainingMode ? t.btnTrainingOn : t.btnTrainingOff;
   themeToggleBtn.textContent = state.darkMode ? t.btnThemeDark : t.btnThemeLight;
+
   setStatus("statusReady");
 }
 
