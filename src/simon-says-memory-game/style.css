@@ -60,18 +60,20 @@ body[data-theme="light"] .subtitle {
   color: #4b5563;
 }
 
+/* STATUS PANEL */
+
 .status-panel {
   display: grid;
-  grid-template-columns: repeat(2, minmax(90px, 110px)) minmax(160px, 200px) minmax(220px, 1fr) minmax(160px, 1.2fr) auto;
+  grid-template-columns: repeat(2, minmax(90px, 120px)) minmax(160px, 200px) minmax(220px, 1.2fr) minmax(160px, 1.1fr) auto;
   gap: 12px;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   margin-bottom: 24px;
 }
 
 .status-item {
   background: rgba(15, 23, 42, 0.95);
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: 16px;
   border: 1px solid rgba(75, 85, 99, 0.9);
   min-width: 96px;
@@ -97,7 +99,7 @@ body[data-theme="light"] .status-item .label {
 .status-item .value {
   display: block;
   margin-top: 4px;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
@@ -240,6 +242,8 @@ body[data-theme="light"] .secondary-btn {
   border-color: #22c55e;
 }
 
+/* GAME BOARD */
+
 .game-wrapper {
   display: flex;
   flex-direction: column;
@@ -282,7 +286,7 @@ body[data-theme="light"] .secondary-btn {
   cursor: pointer;
   box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
   transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.08s ease, opacity 0.08s ease, background-image 0.15s ease, background-color 0.15s ease;
-  background-size: 70%;
+  background-size: 76%;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -311,47 +315,61 @@ body[data-theme="light"] .secondary-btn {
 
 /* PlayStation mode */
 
-.game-board.theme-playstation .pad-green {
+.game-board.theme-playstation .pad-green,
+.game-board.theme-playstation .pad-red,
+.game-board.theme-playstation .pad-yellow,
+.game-board.theme-playstation .pad-blue {
   background-color: #0f172a;
+  background-size: 78%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.game-board.theme-playstation .pad-green {
   background-image: url("assets/triangle.PNG");
 }
 
 .game-board.theme-playstation .pad-red {
-  background-color: #0f172a;
   background-image: url("assets/circle.PNG");
 }
 
 .game-board.theme-playstation .pad-yellow {
-  background-color: #0f172a;
   background-image: url("assets/square.PNG");
 }
 
 .game-board.theme-playstation .pad-blue {
-  background-color: #0f172a;
   background-image: url("assets/cross.PNG");
 }
 
 /* Emoji mode */
 
-.game-board.theme-emoji .pad-green {
+.game-board.theme-emoji .pad-green,
+.game-board.theme-emoji .pad-red,
+.game-board.theme-emoji .pad-yellow,
+.game-board.theme-emoji .pad-blue {
   background-color: #111827;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.game-board.theme-emoji .pad-green {
   background-image: url("assets/love.PNG");
 }
 
 .game-board.theme-emoji .pad-red {
-  background-color: #111827;
   background-image: url("assets/angry.PNG");
 }
 
 .game-board.theme-emoji .pad-yellow {
-  background-color: #111827;
   background-image: url("assets/shy.PNG");
 }
 
 .game-board.theme-emoji .pad-blue {
-  background-color: #111827;
   background-image: url("assets/clown.PNG");
 }
+
+/* TEXTS / TABLE */
 
 .status-message {
   font-size: 0.95rem;
@@ -430,7 +448,7 @@ body[data-theme="light"] #leaderboard tbody tr:hover {
   background: #d1d5db;
 }
 
-/* Overlay */
+/* OVERLAY */
 
 .overlay {
   position: fixed;
@@ -514,6 +532,8 @@ body[data-theme="light"] .overlay-subtitle {
 .overlay-actions .primary-btn {
   box-shadow: 0 10px 30px rgba(34, 197, 94, 0.5);
 }
+
+/* RESPONSIVE */
 
 @media (max-width: 920px) {
   .status-panel {
