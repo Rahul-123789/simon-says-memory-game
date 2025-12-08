@@ -1,9 +1,8 @@
-# 🎮 Simon Says · Memory Game
+<p align="center">
+  <img src="icons/logo.png" alt="Simon Says · Memory Game Logo" width="512" height="512">
+</p>
 
-<!-- Ícones do projeto (opcional, se quiser adicionar depois) -->
-<!-- <p align="center">
-  <img src="assets/icon-simon.png" alt="Simon Says Icon" width="120">
-</p> -->
+# 🎮 Simon Says · Memory Game
 
 ---
 
