@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icons/logo.png" alt="Simon Says · Memory Game Logo" width="512" height="512">
+  <img src="src/simon-says-memory-game/icons/logo.png" width="512" alt="Simon Says · Memory Game Logo">
 </p>
 
 # 🎮 Simon Says · Memory Game
