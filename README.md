@@ -71,7 +71,63 @@
 
 | 🇧🇷 PT-BR | 🇺🇸 EN |
 | --- | --- |
-| Estrutura seguindo o **Molde João Albero v3.0**:<br><br>```text<br>simon-says-memory-game/<br>├─ src/<br>│  └─ simon-says-memory-game/<br>│     ├─ index.html<br>│     ├─ style.css<br>│     ├─ script.js<br>│     ├─ assets/<br>│     │  ├─ square.PNG<br>│     │  ├─ cross.PNG<br>│     │  ├─ triangle.PNG<br>│     │  ├─ circle.PNG<br>│     │  ├─ angry.PNG<br>│     │  ├─ clown.PNG<br>│     │  ├─ love.PNG<br>│     │  └─ shy.PNG<br>│     └─ audio/<br>│        ├─ green.mp3<br>│        ├─ red.mp3<br>│        ├─ yellow.mp3<br>│        ├─ blue.mp3<br>│        └─ error.mp3<br>├─ tests/  (reservado para futuros testes)<br>├─ README.md<br>├─ LICENSE (MIT)<br>└─ .gitignore<br>``` | Structure following **Molde João Albero v3.0**:<br><br>```text<br>simon-says-memory-game/<br>├─ src/<br>│  └─ simon-says-memory-game/<br>│     ├─ index.html<br>│     ├─ style.css<br>│     ├─ script.js<br>│     ├─ assets/<br>│     │  ├─ square.PNG<br>│     │  ├─ cross.PNG<br>│     │  ├─ triangle.PNG<br>│     │  ├─ circle.PNG<br>│     │  ├─ angry.PNG<br>│     │  ├─ clown.PNG<br>│     │  ├─ love.PNG<br>│     │  └─ shy.PNG<br>│     └─ audio/<br>│        ├─ green.mp3<br>│        ├─ red.mp3<br>│        ├─ yellow.mp3<br>│        ├─ blue.mp3<br>│        └─ error.mp3<br>├─ tests/  (reserved for future tests)<br>├─ README.md<br>├─ LICENSE (MIT)<br>└─ .gitignore<br>``` |
+| Estrutura seguindo o **Molde João Albero v3.0**: | Structure following **Molde João Albero v3.0**: |
+
+| 🇧🇷 PT-BR | 🇺🇸 EN |
+| --- | --- |
+| ```text
+simon-says-memory-game/
+├─ src/
+│  └─ simon-says-memory-game/
+│     ├─ index.html
+│     ├─ style.css
+│     ├─ script.js
+│     ├─ assets/
+│     │  ├─ square.PNG
+│     │  ├─ cross.PNG
+│     │  ├─ triangle.PNG
+│     │  ├─ circle.PNG
+│     │  ├─ angry.PNG
+│     │  ├─ clown.PNG
+│     │  ├─ love.PNG
+│     │  └─ shy.PNG
+│     └─ audio/
+│        ├─ green.mp3
+│        ├─ red.mp3
+│        ├─ yellow.mp3
+│        ├─ blue.mp3
+│        └─ error.mp3
+├─ tests/        (reservado para futuros testes)
+├─ README.md
+├─ LICENSE (MIT)
+└─ .gitignore
+``` | ```text
+simon-says-memory-game/
+├─ src/
+│  └─ simon-says-memory-game/
+│     ├─ index.html
+│     ├─ style.css
+│     ├─ script.js
+│     ├─ assets/
+│     │  ├─ square.PNG
+│     │  ├─ cross.PNG
+│     │  ├─ triangle.PNG
+│     │  ├─ circle.PNG
+│     │  ├─ angry.PNG
+│     │  ├─ clown.PNG
+│     │  ├─ love.PNG
+│     │  └─ shy.PNG
+│     └─ audio/
+│        ├─ green.mp3
+│        ├─ red.mp3
+│        ├─ yellow.mp3
+│        ├─ blue.mp3
+│        └─ error.mp3
+├─ tests/        (reserved for future tests)
+├─ README.md
+├─ LICENSE (MIT)
+└─ .gitignore
+``` |
 
 ---
 
